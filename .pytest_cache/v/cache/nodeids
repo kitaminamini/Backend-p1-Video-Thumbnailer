@@ -1,0 +1,4 @@
+[
+  "test_upload_mp4.py::test_uploading",
+  "test_upload_mp4.py::test_full_download"
+]
