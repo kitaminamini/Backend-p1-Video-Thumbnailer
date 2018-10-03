@@ -20,6 +20,13 @@ services:
       - REDIS_QUEUE=redis
     ports:
       - '5000:5000'
+  web-page:
+    build:
+      context: web-page
+    depends_on:
+      - queue-wrapper
+    ports:
+      - '9780:9780'
 
 networks:
     default:
