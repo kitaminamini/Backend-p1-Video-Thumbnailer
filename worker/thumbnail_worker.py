@@ -76,7 +76,7 @@ def execute_thumbnailing(log, task):
         log.info(SOS_URL + filepath)
         resp = requests.get(SOS_URL + filepath, headers=headers, stream=True)
         if resp.status_code == STATUS_OK:
-            output = task.get('output')
+            output = obj
             with open('./' + output, 'wb') as handle:
                 for block in resp.iter_content(2048):
                     handle.write(block)

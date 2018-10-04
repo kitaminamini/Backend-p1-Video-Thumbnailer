@@ -4,21 +4,24 @@
         <meta charset="UTF-8">
         <title>Control Center</title>
     </head>
-    <br>
+    <body>
         <h1>
             Welcome to Taro's Video Thumbnailer
         </h1>
+        <h2>
+            Bucket: {{ bucket }}
+        </h2>
         <table border = 1>
             {% for value in result %}
 
             <tr>
                 <th> {{ value }} </th>
-                <!--{ "bucket": "giftest", "object": "BT-42.mp4", "output": "out.mp4", "gif_filename": "proto.gif", "start": 49 }-->
+                <!--{ "bucket": "giftest", "object": "BT-42.mp4", "gif_filename": "proto.gif", "start": 49 }-->
                 <td>
-                    <form action = "http://queue-wrapper:5000/gif" method = "POST">
-                         <p>Bucket Name<input type = "text" name = "bucket" /></p>
-                         <p>Object Name<input type = "text" name = "object" /></p>
-                         <p>Output Video Name<input type = "text" name = "output" /></p>
+                    <form action = "http://localhost:9780/gif" method = "POST">
+                         <p><input type = "hidden" name = "bucket" value="{{ bucket }}" /></p>
+                         <p><input type = "hidden" name = "object" value="{{ value }}"/></p>
+                         <!--<p>Output Video Name<input type = "text" name = "output" /></p>-->
                          <p>Gif Name<input type ="text" name = "gif_filename" /></p>
                          <p>start second<input type ="number" name = "start" /></p>
                          <p><input type = "submit" value = "submit" /></p>
@@ -29,12 +32,16 @@
             {% endfor %}
         </table>
         <br/>
-        <form action = "http://queue-wrapper:5000/gif" method = "POST">
-             <p>Bucket Name<input type = "text" name = "bucket" /></p>
-             <p>Output Video Name<input type = "text" name = "output" /></p>
-             <p>Gif Name<input type ="text" name = "gif_filename" /></p>
-             <p>start second<input type ="number" name = "start" /></p>
+        <form action = "http://localhost:5000/gifs_for_videos/{{ bucket }}" method = "POST">
+             <!--<p><input type = "hidden" name = "bucket" value="{{ bucket }}" /></p>-->
+             <!--<p><input type = "hidden" name = "object" value="{{ value }}"/></p>-->
+             <!--<p>Gif Template Name<input type ="text" name = "gif_filename" /></p>-->
              <p><input type = "submit" value = "submit all" /></p>
+        </form>
+
+        <form action = "http://localhost:9780/display" method = "POST">
+             <p><input type = "hidden" name = "bucket" value="{{ bucket }}" /></p>
+             <p><input type = "submit" value = "display all gif" /></p>
         </form>
 
    </body>

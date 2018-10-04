@@ -1,1 +1,1 @@
-echo '{ "bucket": "giftest", "object": "BT-42.mp4", "output": "out.mp4", "gif_filename": "proto.gif", "start": 49 }' | http POST localhost:5000/gif
+echo '{ "bucket": "giftest", "object": "BT-42.mp4", "gif_filename": "proto.gif", "start": 49 }' | http POST localhost:5000/gif
