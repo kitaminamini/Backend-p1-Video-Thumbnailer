@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9403848-aa43-455c-ba6c-a4014eacae15" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web-page/templates/display.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/queue-wrapper/route.py" beforeDir="false" afterPath="$PROJECT_DIR$/queue-wrapper/route.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test_command.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-page/page-route.py" beforeDir="false" afterPath="$PROJECT_DIR$/web-page/page-route.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-page/templates/all_videos.html" beforeDir="false" afterPath="$PROJECT_DIR$/web-page/templates/all_videos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-page/templates/display.html" beforeDir="false" afterPath="$PROJECT_DIR$/web-page/templates/display.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-page/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web-page/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worker/thumbnail_worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/worker/thumbnail_worker.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,9 +52,9 @@
         <counts>
           <entry key="Dockerfile" value="163" />
           <entry key="dummy" value="11" />
-          <entry key="html" value="527" />
+          <entry key="html" value="918" />
           <entry key="md" value="173" />
-          <entry key="py" value="2811" />
+          <entry key="py" value="3464" />
           <entry key="sh" value="12" />
           <entry key="txt" value="2" />
           <entry key="yml" value="65" />
@@ -68,10 +64,10 @@
         <counts>
           <entry key="Bash" value="12" />
           <entry key="Dockerfile" value="163" />
-          <entry key="HTML" value="527" />
+          <entry key="HTML" value="918" />
           <entry key="Markdown" value="173" />
           <entry key="PLAIN_TEXT" value="13" />
-          <entry key="Python" value="2811" />
+          <entry key="Python" value="3464" />
           <entry key="YAML" value="65" />
         </counts>
       </usages-collector>
@@ -112,8 +108,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/queue-wrapper/route.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="70" column="41" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="41" />
+            <state relative-caret-position="38">
+              <caret line="55" column="22" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="22" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <marker date="1538660933760" expanded="true" signature="2644:2649" ph="..." />
@@ -122,34 +118,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web-page/page-route.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-804">
-              <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+            <state relative-caret-position="224">
+              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1538658019207" expanded="true" signature="830:1331" ph="..." />
-                <marker date="1538658019207" expanded="true" signature="2555:2630" ph="..." />
+                <marker date="1538671627126" expanded="true" signature="981:1482" ph="..." />
+                <marker date="1538671627126" expanded="true" signature="1480:1482" ph="..." />
+                <marker date="1538671627126" expanded="true" signature="2580:3202" ph="..." />
+                <marker date="1538671627126" expanded="true" signature="3237:3351" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web-page/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web-page/templates/all_videos.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="39" column="15" lean-forward="true" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -157,8 +137,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-page/templates/display.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="39" />
+            <state relative-caret-position="255">
+              <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web-page/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web-page/templates/all_videos.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2">
+              <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -213,11 +211,11 @@
         <option value="$PROJECT_DIR$/test_upload_mp4.py" />
         <option value="$PROJECT_DIR$/test_command.txt" />
         <option value="$PROJECT_DIR$/worker/thumbnail_worker.py" />
+        <option value="$PROJECT_DIR$/queue-wrapper/route.py" />
         <option value="$PROJECT_DIR$/web-page/templates/index.html" />
+        <option value="$PROJECT_DIR$/web-page/templates/all_videos.html" />
         <option value="$PROJECT_DIR$/web-page/templates/display.html" />
         <option value="$PROJECT_DIR$/web-page/page-route.py" />
-        <option value="$PROJECT_DIR$/queue-wrapper/route.py" />
-        <option value="$PROJECT_DIR$/web-page/templates/all_videos.html" />
       </list>
     </option>
   </component>
@@ -240,6 +238,11 @@
             <path>
               <item name="p1m2" type="b2602c69:ProjectViewProjectNode" />
               <item name="p1m2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p1m2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p1m2" type="462c0819:PsiDirectoryNode" />
+              <item name="queue-wrapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="p1m2" type="b2602c69:ProjectViewProjectNode" />
@@ -383,7 +386,7 @@
     <frame x="20" y="59" width="1260" height="688" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4925" weight="0.17756255" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4925" visible="true" weight="0.17756255" />
       <window_info id="Structure" order="1" sideWeight="0.5075" side_tool="true" weight="0.17756255" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -396,7 +399,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32885906" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33892617" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -544,36 +547,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web-page/templates/display.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-page/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-page/page-route.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-804">
-          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1538658019207" expanded="true" signature="830:1331" ph="..." />
-            <marker date="1538658019207" expanded="true" signature="2555:2630" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/queue-wrapper/route.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="70" column="41" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="41" />
+        <state relative-caret-position="38">
+          <caret line="55" column="22" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="22" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
             <marker date="1538660933760" expanded="true" signature="2644:2649" ph="..." />
@@ -581,10 +558,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web-page/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web-page/templates/all_videos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="39" column="15" lean-forward="true" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
+        <state relative-caret-position="-2">
+          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-page/templates/display.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-page/page-route.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1538671627126" expanded="true" signature="981:1482" ph="..." />
+            <marker date="1538671627126" expanded="true" signature="1480:1482" ph="..." />
+            <marker date="1538671627126" expanded="true" signature="2580:3202" ph="..." />
+            <marker date="1538671627126" expanded="true" signature="3237:3351" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

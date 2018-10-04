@@ -2,37 +2,67 @@
 <html>
     <head>
         <title>Display Room</title>
-        <style>
-        .grid-container {
-          display: grid;
-          grid-template-columns: auto auto auto auto;
-          grid-gap: 2px;
-          background-color: #2196F3;
-          padding: 1px;
-        }
-        .grid-container > div {
-          background-color: rgba(255, 255, 255, 0.8);
-          border: 1px solid black;
-          text-align: center;
-          font-size: 30px;
-        }
-        </style>
+        <!--<style>-->
+        <!--.grid-container {-->
+          <!--display: grid;-->
+          <!--grid-template-columns: auto auto auto auto;-->
+          <!--grid-gap: 2px;-->
+          <!--background-color: #2196F3;-->
+          <!--padding: 1px;-->
+        <!--}-->
+        <!--.grid-container > div {-->
+          <!--background-color: rgba(255, 255, 255, 0.8);-->
+          <!--border: 1px solid black;-->
+          <!--text-align: center;-->
+          <!--font-size: 30px;-->
+          <!--width: 50%;-->
+        <!--}-->
+        <!--</style>-->
     </head>
 <body>
     <h1>Welcome to Taro's Display Room</h1>
     <h2>Bucket: {{ bucket }}</h2>
-    <!--<img src="http://localhost:8280/giftest/newGif.gif"/>-->
-
-
-    <div class="grid-container">
+    <form action="http://localhost:9780/delete_all/{{ bucket }}" method = "POST">
+         <p><input type = "hidden" name = "object" value="{{ result }}"/></p>
+         <p><input type = "submit" value = "Delete All"/></p>
+    </form>
+    <table>
         {% for key, gif_src in result.items() %}
 
-      <div>
-          <img src="{{ gif_src }}"/>
-      </div>
+        <tr>
+            <th> <img src="{{ gif_src }}" title="{{ key }}"/> </th>
+            <td>
+                <form action="http://localhost:9780/delete/{{ bucket }}/{{ key }}" method = "GET">
+                     <!--<p><input type = "hidden" name = "bucket" value="{{ bucket }}" /></p>-->
+                     <!--<p><input type = "hidden" name = "object" value="{{ key }}"/></p>-->
+                     <p><input type = "submit" value = "Delete"/></p>
+                </form>
+            </td>
+        </tr>
 
         {% endfor %}
-    </div>
+    </table>
+
+
+
+
+    <!--<div class="grid-container">-->
+        <!--{% for key, gif_src in result.items() %}-->
+
+      <!--<div>-->
+          <!--<img src="{{ gif_src }}"/>-->
+      <!--</div>-->
+      <!--<div>-->
+          <!--<form action = "http://localhost:9780/gif" method = "POST">-->
+             <!--<p><input type = "hidden" name = "bucket" value="{{ bucket }}" /></p>-->
+             <!--<p><input type = "hidden" name = "object" value="{{ key }}"/></p>-->
+             <!--<p><input type = "submit" value = "delete"/></p>-->
+          <!--</form>-->
+      <!--</div>-->
+        <!--<br/>-->
+
+        <!--{% endfor %}-->
+    <!--</div>-->
 
 
 </body>

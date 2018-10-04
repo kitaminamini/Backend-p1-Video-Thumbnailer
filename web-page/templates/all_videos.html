@@ -39,8 +39,8 @@
              <p><input type = "submit" value = "submit all" /></p>
         </form>
 
-        <form action = "http://localhost:9780/display" method = "POST">
-             <p><input type = "hidden" name = "bucket" value="{{ bucket }}" /></p>
+        <form action = "http://localhost:9780/display/{{ bucket }}" method = "GET">
+             <!--<p><input type = "hidden" name = "bucket" value="{{ bucket }}" /></p>-->
              <p><input type = "submit" value = "display all gif" /></p>
         </form>
 

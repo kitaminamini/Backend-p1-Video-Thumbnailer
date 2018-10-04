@@ -2,9 +2,10 @@ import os
 import json
 import requests
 import logging
-from flask import Flask, jsonify, request, render_template
+import ast
+from flask import Flask, redirect, url_for, jsonify, request, render_template
 
-
+WEB_URL = 'http://localhost:9780'
 SOS_URL = 'http://sos:8280'
 SOS_OUTER_URL = 'http://localhost:8280'
 SOS_PORT = '8280'
@@ -30,8 +31,12 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/<bucketName>/show_all_videos', methods = ['POST', 'GET'])
-def show_all_videos(bucketName):
+@app.route('/show_all_videos', methods = ['POST'])
+def show_all_videos():
+    form = request.form
+    LOG.info(form)
+    body = request.form.to_dict(flat=True)
+    bucketName = body["bucket"]
     resp = requests.get(SOS_URL + '/' + bucketName + '?list')
     if resp.status_code != STATUS_OK:
         return False
@@ -51,10 +56,6 @@ def submit_job():
     form = request.form
     LOG.info(form)
     body = request.form.to_dict(flat=True)
-    #     {
-    #     key: value[0] if len(value) == 1 else value
-    #     for key, value in request.form.iterlists()
-    # }
     LOG.info(body)
     try:
         res = requests.post(THUMBNAILER_URL+'/gif', json=body)
@@ -67,24 +68,44 @@ def submit_job():
         return jsonify({'status': 'BAD_REQUEST'})
 
 
-@app.route('/display', methods=['POST'])
-def display_all_gif():
-    result = {}
+@app.route('/display/<bucketname>', methods=['GET'])
+def display_all_gif(bucketname):
+    # form = request.form
+    # LOG.info(form)
+    # body = request.form.to_dict(flat=True)
+    # bucket = body["bucket"]
+    bucket = bucketname
+    resp = requests.get(THUMBNAILER_URL + '/all_gifs/' + bucket)
+    if resp.status_code != STATUS_OK:
+        return jsonify({'status': 'BAD_REQUEST'})
+    else:
+        res_body = resp.json()
+        return render_template('display.html', bucket=bucket, result=res_body)
+
+@app.route('/delete/<bucketname>/<objectname>', methods=['GET'])
+def delete_gif(bucketname, objectname):
+    res_code = delete(bucketname, objectname)
+    if res_code == STATUS_OK:
+        return redirect(WEB_URL+"/display/"+bucketname)
+    else:
+        return jsonify({'status': 'BAD_REQUEST'})
+
+@app.route('/delete_all/<bucketname>', methods=['POST'])
+def delete_all_gif(bucketname):
     form = request.form
     LOG.info(form)
     body = request.form.to_dict(flat=True)
-    bucket = body["bucket"]
-    resp = requests.get(SOS_URL + '/' + bucket + '?list')
-    if resp.status_code != STATUS_OK:
-        return False
-    else:
-        res_body = resp.json()
-        for key in res_body["objects"]:
-            obj = res_body["objects"][key]["name"]
-            filename, extension = obj.rsplit('.', 1)
-            if extension.lower() == "gif":
-                result[obj] = SOS_OUTER_URL + '/' + bucket + '/' + obj
-    return render_template('display.html', bucket=bucket, result=result)
+    LOG.info(body)
+    for key in ast.literal_eval(body["object"]):
+        res_code = delete(bucketname, key)
+        if res_code != STATUS_OK:
+            return jsonify({'status': 'BAD_REQUEST'})
+
+    return redirect(WEB_URL+"/display/"+bucketname)
+
+def delete(bucketname, objectname):
+    resp = requests.delete(SOS_URL + '/' + bucketname + '/'+ objectname +'?delete')
+    return resp.status_code
 
 if __name__ == '__main__':
     app.run(debug=True)
