@@ -104,6 +104,7 @@ def execute_thumbnailing(log, task):
                         headers={'Content-Length': str(len(data)), 'Content-MD5': hashlib.md5(data).hexdigest()})
             if resp.status_code == STATUS_OK:
                 requests.post(SOS_URL + "/" + bucket + "/" + gif_filename + "?complete")
+                log.info("====Conpleted uploading "+gif_filename+"====")
 
     except (ConnectionError, TimeoutError) as e:
         log.info(str(e)+": Failed to connect to SOS")

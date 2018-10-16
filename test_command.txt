@@ -1,1 +1,5 @@
 echo '{ "bucket": "giftest", "object": "BT-42.mp4", "gif_filename": "proto.gif", "start": 49 }' | http POST localhost:5000/gif
+
+
+## How to increase font size for submit button ##
+<input type = "submit" value = "Delete" style = "font-size:65px; height:80px; width:70px;">

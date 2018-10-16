@@ -18,15 +18,58 @@
           <!--width: 50%;-->
         <!--}-->
         <!--</style>-->
+        <style>
+        h1 {
+            color:white;
+            text-align:center;
+        }
+        h2 {
+            color:white;
+        }
+        html {
+          background-color:black;
+          color:white;
+          height:100%;
+        }
+        body {
+         height:100%;
+        }
+        p {
+            height:90px;
+            background-color:black;
+        }
+        .cell {
+          border: 1px solid white;
+          margin:5px;
+          width:100px;height:50px;
+          font-size:18px;
+        }
+        .back {
+          border: 1px solid white;
+          margin:5px;
+          width:140px;height:50px;
+          font-size:16px;
+        }
+        </style>
     </head>
 <body>
     <h1>Welcome to Taro's Display Room</h1>
-    <h2>Bucket: {{ bucket }}</h2>
-    <form action="http://localhost:9780/delete_all/{{ bucket }}" method = "POST">
-         <p><input type = "hidden" name = "object" value="{{ result }}"/></p>
-         <p><input type = "submit" value = "Delete All"/></p>
+    <form action = "http://localhost:9780/show_all_videos" method = "POST">
+             <input type = "hidden" name = "bucket" value="{{ bucket }}"/>
+             <input type = "submit" value = "Back to all videos" class="back"/>
     </form>
-    <table>
+    <table align="center">
+        <th>
+            <h2>Bucket: {{ bucket }}</h2>
+        </th>
+        <td>
+            <form action="http://localhost:9780/delete_all/{{ bucket }}" method = "POST">
+                 <input type = "hidden" name = "object" value="{{ result }}"/>
+                 <input type = "submit" value = "Delete All" class="cell"/>
+            </form>
+        </td>
+
+    <table align="center">
         {% for key, gif_src in result.items() %}
 
         <tr>
@@ -35,7 +78,7 @@
                 <form action="http://localhost:9780/delete/{{ bucket }}/{{ key }}" method = "GET">
                      <!--<p><input type = "hidden" name = "bucket" value="{{ bucket }}" /></p>-->
                      <!--<p><input type = "hidden" name = "object" value="{{ key }}"/></p>-->
-                     <p><input type = "submit" value = "Delete"/></p>
+                     <p><input type = "submit" value = "Delete" class="cell"/></p>
                 </form>
             </td>
         </tr>
